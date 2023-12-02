@@ -16,7 +16,7 @@ import json
 import os
  
 # Замените 'YOUR_ACCESS_TOKEN' на свой токен доступа
-ACCESS_TOKEN = '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'
+ACCESS_TOKEN = 'YOUR_ACCESS_TOKEN'
  
 # Создаем экземпляр объекта класса Github
 g = Github(ACCESS_TOKEN)
