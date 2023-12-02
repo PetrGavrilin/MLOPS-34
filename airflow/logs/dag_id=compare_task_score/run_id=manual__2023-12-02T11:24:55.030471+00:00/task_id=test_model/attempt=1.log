@@ -1,0 +1,16 @@
+[2023-12-02T14:26:07.213+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: compare_task_score.test_model manual__2023-12-02T11:24:55.030471+00:00 [queued]>
+[2023-12-02T14:26:07.754+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: compare_task_score.test_model manual__2023-12-02T11:24:55.030471+00:00 [queued]>
+[2023-12-02T14:26:07.754+0300] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-02T14:26:07.869+0300] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): test_model> on 2023-12-02 11:24:55.030471+00:00
+[2023-12-02T14:26:07.922+0300] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'compare_task_score', 'test_model', 'manual__2023-12-02T11:24:55.030471+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/run_airflow.py', '--cfg-path', '/tmp/tmpbg1i76yy']
+[2023-12-02T14:26:07.925+0300] {standard_task_runner.py:85} INFO - Job 81: Subtask test_model
+[2023-12-02T14:26:07.904+0300] {standard_task_runner.py:57} INFO - Started process 19353 to run task
+[2023-12-02T14:26:08.409+0300] {task_command.py:416} INFO - Running <TaskInstance: compare_task_score.test_model manual__2023-12-02T11:24:55.030471+00:00 [running]> on host MLOPS-3-3.myguest.virtualbox.org
+[2023-12-02T14:26:08.684+0300] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='compare_task_score' AIRFLOW_CTX_TASK_ID='test_model' AIRFLOW_CTX_EXECUTION_DATE='2023-12-02T11:24:55.030471+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-02T11:24:55.030471+00:00'
+[2023-12-02T14:26:08.690+0300] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-02T14:26:08.692+0300] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/petr/project/scripts/test_model.py']
+[2023-12-02T14:26:08.713+0300] {subprocess.py:86} INFO - Output:
+[2023-12-02T14:26:13.520+0300] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-02T14:26:13.704+0300] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=compare_task_score, task_id=test_model, execution_date=20231202T112455, start_date=20231202T112607, end_date=20231202T112613
+[2023-12-02T14:26:13.804+0300] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-02T14:26:13.893+0300] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

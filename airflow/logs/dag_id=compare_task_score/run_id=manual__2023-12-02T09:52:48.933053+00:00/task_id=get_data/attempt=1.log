@@ -1,0 +1,51 @@
+[2023-12-02T13:09:48.232+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: compare_task_score.get_data manual__2023-12-02T09:52:48.933053+00:00 [queued]>
+[2023-12-02T13:09:48.390+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: compare_task_score.get_data manual__2023-12-02T09:52:48.933053+00:00 [queued]>
+[2023-12-02T13:09:48.391+0300] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-02T13:09:48.433+0300] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): get_data> on 2023-12-02 09:52:48.933053+00:00
+[2023-12-02T13:09:48.448+0300] {standard_task_runner.py:57} INFO - Started process 3353 to run task
+[2023-12-02T13:09:48.459+0300] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'compare_task_score', 'get_data', 'manual__2023-12-02T09:52:48.933053+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/run_airflow.py', '--cfg-path', '/tmp/tmprtkbh10a']
+[2023-12-02T13:09:48.461+0300] {standard_task_runner.py:85} INFO - Job 44: Subtask get_data
+[2023-12-02T13:09:48.596+0300] {task_command.py:416} INFO - Running <TaskInstance: compare_task_score.get_data manual__2023-12-02T09:52:48.933053+00:00 [running]> on host MLOPS-3-3.myguest.virtualbox.org
+[2023-12-02T13:09:49.120+0300] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='compare_task_score' AIRFLOW_CTX_TASK_ID='get_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-02T09:52:48.933053+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-02T09:52:48.933053+00:00'
+[2023-12-02T13:09:49.123+0300] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-02T13:09:49.151+0300] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/petr/project/scripts/get_data.py']
+[2023-12-02T13:09:49.205+0300] {subprocess.py:86} INFO - Output:
+[2023-12-02T13:09:50.143+0300] {subprocess.py:93} INFO - WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+[2023-12-02T13:09:50.143+0300] {subprocess.py:93} INFO - Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+[2023-12-02T13:09:50.143+0300] {subprocess.py:93} INFO - To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+[2023-12-02T13:09:50.599+0300] {subprocess.py:93} INFO - Requirement already satisfied: PyGithub in /home/petr/project/venv/lib/python3.10/site-packages (2.1.1)
+[2023-12-02T13:09:50.625+0300] {subprocess.py:93} INFO - Requirement already satisfied: pyjwt[crypto]>=2.4.0 in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (2.8.0)
+[2023-12-02T13:09:50.629+0300] {subprocess.py:93} INFO - Requirement already satisfied: typing-extensions>=4.0.0 in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (4.8.0)
+[2023-12-02T13:09:50.631+0300] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.14.0 in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (2.31.0)
+[2023-12-02T13:09:50.634+0300] {subprocess.py:93} INFO - Requirement already satisfied: urllib3>=1.26.0 in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (2.0.7)
+[2023-12-02T13:09:50.634+0300] {subprocess.py:93} INFO - Requirement already satisfied: Deprecated in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (1.2.14)
+[2023-12-02T13:09:50.635+0300] {subprocess.py:93} INFO - Requirement already satisfied: pynacl>=1.4.0 in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (1.5.0)
+[2023-12-02T13:09:50.637+0300] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil in /home/petr/project/venv/lib/python3.10/site-packages (from PyGithub) (2.8.2)
+[2023-12-02T13:09:50.673+0300] {subprocess.py:93} INFO - Requirement already satisfied: cryptography>=3.4.0 in /home/petr/project/venv/lib/python3.10/site-packages (from pyjwt[crypto]>=2.4.0->PyGithub) (41.0.5)
+[2023-12-02T13:09:50.707+0300] {subprocess.py:93} INFO - Requirement already satisfied: cffi>=1.4.1 in /home/petr/project/venv/lib/python3.10/site-packages (from pynacl>=1.4.0->PyGithub) (1.16.0)
+[2023-12-02T13:09:50.741+0300] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/petr/project/venv/lib/python3.10/site-packages (from requests>=2.14.0->PyGithub) (2.1.1)
+[2023-12-02T13:09:50.745+0300] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/petr/project/venv/lib/python3.10/site-packages (from requests>=2.14.0->PyGithub) (2023.7.22)
+[2023-12-02T13:09:50.746+0300] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/petr/project/venv/lib/python3.10/site-packages (from requests>=2.14.0->PyGithub) (3.4)
+[2023-12-02T13:09:50.800+0300] {subprocess.py:93} INFO - Requirement already satisfied: wrapt<2,>=1.10 in /home/petr/project/venv/lib/python3.10/site-packages (from Deprecated->PyGithub) (1.15.0)
+[2023-12-02T13:09:50.805+0300] {subprocess.py:93} INFO - Requirement already satisfied: six>=1.5 in /home/petr/project/venv/lib/python3.10/site-packages (from python-dateutil->PyGithub) (1.16.0)
+[2023-12-02T13:09:50.809+0300] {subprocess.py:93} INFO - Requirement already satisfied: pycparser in /home/petr/project/venv/lib/python3.10/site-packages (from cffi>=1.4.1->pynacl>=1.4.0->PyGithub) (2.21)
+[2023-12-02T13:10:06.928+0300] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-12-02T13:10:06.928+0300] {subprocess.py:93} INFO -   File "/home/petr/project/scripts/get_data.py", line 27, in <module>
+[2023-12-02T13:10:06.928+0300] {subprocess.py:93} INFO -     repo = g.get_repo('PetrGavrilin/UsefulDatasets')
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/github/MainClass.py", line 380, in get_repo
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -     headers, data = self.__requester.requestJsonAndCheck("GET", url)
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/github/Requester.py", line 494, in requestJsonAndCheck
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -     return self.__check(*self.requestJson(verb, url, parameters, headers, input, self.__customConnection(url)))
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/github/Requester.py", line 525, in __check
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO -     raise self.createException(status, responseHeaders, data)
+[2023-12-02T13:10:06.929+0300] {subprocess.py:93} INFO - github.GithubException.BadCredentialsException: 401 {"message": "Bad credentials", "documentation_url": "https://docs.github.com/rest"}
+[2023-12-02T13:10:08.079+0300] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-02T13:10:08.190+0300] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/petr/project/venv/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-02T13:10:08.228+0300] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=compare_task_score, task_id=get_data, execution_date=20231202T095248, start_date=20231202T100948, end_date=20231202T101008
+[2023-12-02T13:10:08.324+0300] {standard_task_runner.py:104} ERROR - Failed to execute job 44 for task get_data (Bash command failed. The command returned a non-zero exit code 1.; 3353)
+[2023-12-02T13:10:08.412+0300] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-02T13:10:08.608+0300] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

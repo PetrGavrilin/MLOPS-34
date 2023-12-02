@@ -1,0 +1,34 @@
+[2023-12-02T14:19:36.656+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: compare_task_score.test_model manual__2023-12-02T11:13:02.632939+00:00 [queued]>
+[2023-12-02T14:19:36.847+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: compare_task_score.test_model manual__2023-12-02T11:13:02.632939+00:00 [queued]>
+[2023-12-02T14:19:36.847+0300] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-12-02T14:19:36.893+0300] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): test_model> on 2023-12-02 11:13:02.632939+00:00
+[2023-12-02T14:19:36.911+0300] {standard_task_runner.py:57} INFO - Started process 17833 to run task
+[2023-12-02T14:19:36.918+0300] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'compare_task_score', 'test_model', 'manual__2023-12-02T11:13:02.632939+00:00', '--job-id', '76', '--raw', '--subdir', 'DAGS_FOLDER/run_airflow.py', '--cfg-path', '/tmp/tmpi0lb_7sz']
+[2023-12-02T14:19:36.930+0300] {standard_task_runner.py:85} INFO - Job 76: Subtask test_model
+[2023-12-02T14:19:37.131+0300] {task_command.py:416} INFO - Running <TaskInstance: compare_task_score.test_model manual__2023-12-02T11:13:02.632939+00:00 [running]> on host MLOPS-3-3.myguest.virtualbox.org
+[2023-12-02T14:19:37.352+0300] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='compare_task_score' AIRFLOW_CTX_TASK_ID='test_model' AIRFLOW_CTX_EXECUTION_DATE='2023-12-02T11:13:02.632939+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-02T11:13:02.632939+00:00'
+[2023-12-02T14:19:37.354+0300] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-02T14:19:37.359+0300] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/petr/project/scripts/test_model.py']
+[2023-12-02T14:19:37.373+0300] {subprocess.py:86} INFO - Output:
+[2023-12-02T14:19:41.444+0300] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-12-02T14:19:41.445+0300] {subprocess.py:93} INFO -   File "/home/petr/project/scripts/test_model.py", line 34, in <module>
+[2023-12-02T14:19:41.445+0300] {subprocess.py:93} INFO -     test_score.append(model_2.score(X_test, y_test))
+[2023-12-02T14:19:41.446+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/sklearn/base.py", line 668, in score
+[2023-12-02T14:19:41.446+0300] {subprocess.py:93} INFO -     return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+[2023-12-02T14:19:41.446+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/sktime/classification/interval_based/_tsf.py", line 131, in predict
+[2023-12-02T14:19:41.446+0300] {subprocess.py:93} INFO -     return BaseClassifier.predict(self, X=X, **kwargs)
+[2023-12-02T14:19:41.447+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/sktime/classification/base.py", line 230, in predict
+[2023-12-02T14:19:41.447+0300] {subprocess.py:93} INFO -     self.check_is_fitted()
+[2023-12-02T14:19:41.447+0300] {subprocess.py:93} INFO -   File "/home/petr/project/venv/lib/python3.10/site-packages/sktime/base/_base.py", line 483, in check_is_fitted
+[2023-12-02T14:19:41.456+0300] {subprocess.py:93} INFO -     raise NotFittedError(
+[2023-12-02T14:19:41.469+0300] {subprocess.py:93} INFO - sktime.exceptions.NotFittedError: This instance of TimeSeriesForestClassifier has not been fitted yet; please call `fit` first.
+[2023-12-02T14:19:42.741+0300] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-02T14:19:42.820+0300] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/petr/project/venv/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-02T14:19:42.861+0300] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=compare_task_score, task_id=test_model, execution_date=20231202T111302, start_date=20231202T111936, end_date=20231202T111942
+[2023-12-02T14:19:42.932+0300] {standard_task_runner.py:104} ERROR - Failed to execute job 76 for task test_model (Bash command failed. The command returned a non-zero exit code 1.; 17833)
+[2023-12-02T14:19:42.975+0300] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-02T14:19:43.048+0300] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
